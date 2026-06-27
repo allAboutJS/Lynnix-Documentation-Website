@@ -1,0 +1,100 @@
+<section class="relative overflow-hidden border-b border-zinc-800 bg-[#111217]">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.18),transparent_32%),radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.12),transparent_24%)]"></div>
+  <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[40px_40px] opacity-20"></div>
+
+  <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:items-center lg:gap-14 lg:py-24">
+    <div>
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3 py-1.5 text-sm text-violet-200">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.9)]"></span>
+        File-based routing · htmx-native
+      </div>
+
+      <h1 class="max-w-3xl text-5xl font-semibold tracking-tight text-[#faf7ef] sm:text-6xl lg:text-7xl">
+        The missing backend for
+        <span class="bg-linear-to-r from-violet-300 via-blue-300 to-zinc-100 bg-clip-text text-transparent">htmx applications</span>
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
+        Lynnix is a file-based routing and SSR middleware for Node.js. Drop your
+        files in the right place, export a function, and get routing, rendering,
+        middleware chains, htmx-aware partial responses, and error boundaries —
+        all wired together automatically.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/docs" class="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-3 text-sm font-medium text-zinc-200 transition hover:border-zinc-700 hover:bg-zinc-800">
+          Explore docs
+        </a>
+        <a href="https://github.com/allAboutJS/Lynnix" class="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-transparent px-5 py-3 text-sm font-medium text-zinc-400 transition hover:border-zinc-700 hover:text-zinc-100">
+          GitHub
+        </a>
+      </div>
+
+      <div class="mt-10 grid gap-3 sm:grid-cols-3">
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">Filesystem routing</p>
+          <p class="mt-2 text-sm leading-6 text-zinc-300">Static, dynamic, and catch-all routes from your directory structure. No config required.</p>
+        </div>
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">htmx-aware</p>
+          <p class="mt-2 text-sm leading-6 text-zinc-300">Detects htmx requests automatically and serves fragment.html instead of page.html.</p>
+        </div>
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">Framework-agnostic</p>
+          <p class="mt-2 text-sm leading-6 text-zinc-300">Works as middleware with Express, Fastify, or bare node:http. Mount it anywhere.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-full overflow-hidden space-y-4">
+      <div class="overflow-hidden rounded-3xl border border-zinc-800 bg-[#16171d] shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
+        <div class="flex items-center justify-between border-b border-zinc-800 px-4 py-3">
+          <div class="flex items-center gap-2">
+            <span class="h-2.5 w-2.5 rounded-full bg-rose-500"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+            <span class="ml-2 text-xs font-mono text-zinc-500">server.js</span>
+          </div>
+          <span class="rounded-lg border border-zinc-800 bg-zinc-900 px-2 py-1 text-[11px] uppercase tracking-[0.18em] text-zinc-500">Lynnix</span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <pre><code class="language-javascript">import { createLynnixApp } from "lynnix";
+import express from "express";
+
+const app = express();
+const handler = await createLynnixApp("app");
+
+app.use(express.static("public"));
+app.use(handler);
+
+app.listen(3000);</code></pre>
+        </div>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4">
+          <p class="text-2xl font-semibold tracking-tight text-zinc-100">0</p>
+          <p class="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">Config files</p>
+        </div>
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4">
+          <p class="text-2xl font-semibold tracking-tight text-zinc-100">htmx</p>
+          <p class="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">First-class support</p>
+        </div>
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4">
+          <p class="text-2xl font-semibold tracking-tight text-zinc-100">SSR</p>
+          <p class="mt-1 text-xs uppercase tracking-[0.16em] text-zinc-500">Powered by Mutor.js</p>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-900/70 p-4 sm:p-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">Install</p>
+        <div class="mt-3 grid gap-3 sm:grid-cols-3">
+          <div class="rounded-xl border border-zinc-800 bg-[#131419] px-4 py-3 font-mono text-sm text-zinc-200">npm i lynnix</div>
+          <div class="rounded-xl border border-zinc-800 bg-[#131419] px-4 py-3 font-mono text-sm text-zinc-200">yarn add lynnix</div>
+          <div class="rounded-xl border border-zinc-800 bg-[#131419] px-4 py-3 font-mono text-sm text-zinc-200">pnpm add lynnix</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

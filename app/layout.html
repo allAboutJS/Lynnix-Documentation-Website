@@ -1,0 +1,16 @@
+{{# layout "root_layout" }}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ ::include("@/components/shared/css-link.html") }}
+  {{ ::include("@/components/shared/seo.html") }}
+  {{ ::include("@/components/shared/syntax-highlight-css-link.html") }}
+</head>
+
+<body class="bg-zinc-950 text-zinc-100 antialiased">
+  {{ ::slot }}
+  {{ ::include("@/components/shared/syntax-highlight-scripts.html") }}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<script>
+let isMenuOpen = false;
+
+const hamburgerIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>`;
+const closeIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>`;
+
+const menuBtn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("menu-overlay");
+const menuLinks = document.querySelectorAll(".menu-link");
+
+function toggleMenu() {
+  isMenuOpen = !isMenuOpen;
+  menuBtn.innerHTML = isMenuOpen ? closeIcon : hamburgerIcon;
+  document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+  menu.classList.toggle("-translate-x-full");
+  overlay.classList.toggle("hidden");
+}
+
+menuLinks.forEach(el => void el.addEventListener("click", toggleMenu));
+menuBtn.addEventListener("click", toggleMenu);
+</script>

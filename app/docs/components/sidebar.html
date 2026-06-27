@@ -1,0 +1,13 @@
+<div id="menu-overlay" class="fixed hidden md:hidden top-16 bg-zinc-800/50 backdrop-blur-sm left-0 right-0 bottom-0"></div>
+
+<aside id="menu" class="fixed -translate-x-full md:translate-none transition backdrop-blur-2xl top-16 w-60 bg-[#111217]/90 border-r border-zinc-800/80 text-zinc-200 text-sm p-6 bottom-0">
+  <nav>
+    <p class="mb-4 text-xs text-zinc-400">MENU</p>
+
+    <ul class="space-y-3">
+    {{ for item of data.menu }}
+      <li class="hover:text-purple-400 {{ data.pathname === item.path && 'text-purple-400' }}"><a class="w-full block menu-link" href="{{ item.path }}">{{ item.title }}</a></li>
+    {{ endfor }}
+    </ul>
+  </nav>
+</aside>

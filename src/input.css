@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "Google Sans";
+	src: url("/fonts/google-sans.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Google Sans Mono";
+	src: url("/fonts/google-sans-mono.woff2") format("woff2");
+	font-display: swap;
+}
+
+@theme {
+	--font-sans: "Google Sans";
+	--font-mono: "Google Sans Mono";
+}
+
+@layer components {
+	.neon-card {
+		@apply bg-zinc-900 border border-zinc-800 p-4 transition-all duration-300 rounded-sm;
+	}
+
+	.neon-card:hover {
+		@apply border-blue-500 shadow-[0_0_20px_rgba(59,130,246,0.2)];
+	}
+
+	.neon-btn {
+		@apply bg-blue-600 font-medium px-6 py-2 transition-all duration-300 hover:bg-blue-500 hover:shadow-[0_0_15px_rgba(37,99,235,0.5)];
+	}
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+	scroll-padding-top: 100px;
+}
+
+.container {
+	@apply max-w-7xl mx-auto;
+}
+
+code {
+	@apply font-mono!;
+}
+
+pre {
+	@apply my-0! bg-zinc-950!;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #27272a;
+	border: 2px solid #09090b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #3f3f46;
+}
+
+::-webkit-scrollbar-corner {
+	background: #09090b;
+}
+
+* {
+	scrollbar-color: #27272a #09090b;
+	scrollbar-width: thin;
+}
+
+.article {
+	@apply max-w-4xl text-[15px] leading-7 text-zinc-300;
+}
+
+/* Headings */
+.article h1 {
+	@apply text-2xl font-semibold text-white mb-6 tracking-tight;
+}
+
+.article h2 {
+	@apply text-lg font-semibold text-white mt-12 mb-4 tracking-tight;
+}
+
+.article h3 {
+	@apply text-base font-semibold text-white mt-8 mb-3;
+}
+
+/* Paragraphs */
+.article p {
+	@apply mb-5 text-zinc-300;
+}
+
+/* Inline code */
+.article code {
+	@apply text-[13px] font-mono bg-zinc-800 text-emerald-400 px-1.5 py-0.5 rounded;
+}
+
+/* Code blocks */
+.article pre {
+	@apply bg-zinc-900 border border-zinc-800 rounded-lg px-5 py-4 mb-6! overflow-x-auto;
+}
+
+.article pre code {
+	@apply bg-transparent text-zinc-200 p-0 text-[13px] leading-6;
+}
+
+/* Links */
+.article a {
+	@apply text-indigo-400 underline underline-offset-2 hover:text-indigo-300 transition-colors;
+}
+
+/* Lists */
+.article ul {
+	@apply list-disc list-outside pl-5 mb-5 space-y-1.5;
+}
+
+.article ol {
+	@apply list-decimal list-outside pl-5 mb-5 space-y-1.5;
+}
+
+.article li {
+	@apply text-zinc-300;
+}
+
+/* Horizontal rule */
+.article hr {
+	@apply border-zinc-800 my-10;
+}
+
+/* Blockquote */
+.article blockquote {
+	@apply border-l-2 border-zinc-700 pl-4 text-zinc-400 italic my-6;
+}
+
+/* Tables */
+.article table {
+	@apply w-full text-sm border-collapse mb-6;
+}
+
+.article thead {
+	@apply border-b border-zinc-700;
+}
+
+.article th {
+	@apply text-left text-zinc-400 font-medium py-2 pr-6;
+}
+
+.article td {
+	@apply py-2 pr-6 text-zinc-300 border-b border-zinc-800/60;
+}
+
+.article td code,
+.article th code {
+	@apply text-[12px];
+}
+
+/* Strong and em */
+.article strong {
+	@apply font-semibold text-zinc-100;
+}
+
+.article em {
+	@apply italic text-zinc-300;
+}

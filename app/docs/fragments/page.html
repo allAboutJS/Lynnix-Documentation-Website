@@ -1,0 +1,13 @@
+{{# use "docs_layout" }}
+
+<div class="article">
+{{
+  HTML::safe(
+    data.toHtml(
+      ::include("./page.md")
+    )
+  )
+}}
+</div>
+
+{{ ::include("@/docs/components/pager.html") }}

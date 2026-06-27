@@ -1,0 +1,13 @@
+{{# layout "docs_layout" }}
+{{# use "root_layout" }}
+
+{{ ::include("@/docs/components/header.html") }}
+{{ ::include("@/docs/components/sidebar.html") }}
+
+<main class="md:ml-60 md:mr-60 bg-zinc-900 p-6">
+  {{ ::slot }}
+</main>
+
+<!-- Table of Contents -->
+{{ ::include("@/docs/components/toc-script.html") }}
+{{ ::include("@/docs/components/menu-script.html") }}

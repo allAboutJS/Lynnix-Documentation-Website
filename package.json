@@ -1,0 +1,25 @@
+{
+	"name": "lynnix-documentation-website",
+	"version": "1.0.0",
+	"description": "This repo contains the source files for the Lynnix documentation website",
+	"main": "src/index.js",
+	"author": "Victor Onah",
+	"license": "MIT",
+	"dependencies": {
+		"dotenv": "^17.4.2",
+		"lynnix": "^0.0.3",
+		"markdown-it": "^14.2.0",
+		"markdown-it-anchor": "^9.2.0",
+		"serve-static": "^2.2.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.1",
+		"@tailwindcss/cli": "^4.3.1",
+		"tailwindcss": "^4.3.1"
+	},
+	"scripts": {
+		"dev": "node --watch ./src/index.js",
+		"start": "node ./src/index.js",
+		"tailwind": "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles/app.css --watch --minify"
+	}
+}

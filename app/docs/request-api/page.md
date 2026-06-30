@@ -9,7 +9,7 @@ The `req` object passed to loaders and middleware is a `LynnixRequest`. It wraps
 | `req.raw` | `http.IncomingMessage` | The underlying Node.js request object |
 | `req.body` | `Record<string, unknown>` | Parsed request body |
 | `req.files` | `LynnixUploadedFiles` | Uploaded files (multipart only) |
-| `req.cookies` | `Record<string, string>` | Parsed request cookies (requires `cookie`) |
+| `req.cookies` | `Record<string, string>` | Parsed request cookies |
 | `req.params` | `Record<string, string>` | Dynamic and catch-all route parameters |
 | `req.query` | `Record<string, unknown>` | Parsed query string |
 | `req.htmx` | `Record<string, string>` | All `HX-*` request headers, lowercased |
@@ -47,8 +47,8 @@ Contains the parsed request body. The shape depends on the `Content-Type` of the
 
 | Content-Type | Peer dependency | Result |
 | --- | --- | --- |
-| `application/json` | `body-parser` | Parsed JSON object |
-| `application/x-www-form-urlencoded` | `@fastify/busboy` or `qs` | Parsed key-value object |
+| `application/json` | — | Parsed JSON object |
+| `application/x-www-form-urlencoded` | — | Parsed key-value object |
 | `multipart/form-data` | `@fastify/busboy` | Parsed fields in `req.body`, files in `req.files` |
 
 ```javascript
@@ -64,7 +64,7 @@ export function POST(req: LynnixRequest, res: LynnixResponse) {
 
 ## `req.query`
 
-Contains the parsed query string. Uses `qs` if installed, otherwise falls back to Node's built-in `querystring` module.
+Contains the parsed query string.
 
 ```javascript
 // app/posts/loader.(ts/js)
@@ -78,7 +78,7 @@ export function GET(req: LynnixRequest) {
 
 ## `req.cookies`
 
-Contains parsed request cookies. Requires the `cookie` peer dependency. If `cookie` is not installed, `req.cookies` is an empty object.
+Contains parsed request cookies.
 
 ```javascript
 // app/dashboard/middleware.(ts/js)

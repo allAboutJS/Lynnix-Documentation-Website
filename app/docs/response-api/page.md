@@ -33,8 +33,6 @@ export function GET(req: LynnixRequest, res: LynnixResponse) {
 
 ## Cookies
 
-Cookie methods require the `cookie` peer dependency. If it is not installed, calling them throws at runtime.
-
 | Method | Description |
 | --- | --- |
 | `res.setCookie(name, value, options)` | Set a cookie on the response. |
